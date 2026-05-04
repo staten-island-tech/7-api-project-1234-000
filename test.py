@@ -3,7 +3,7 @@ import tkinter as tk # bring in tkinter and call it tk
 window = tk.Tk()
 window.title("Message Reverser") # title at the top of the window
 window.geometry("400x250") # set the size (width x height)
-window.resizable(False, False) # keep it from being resized
+window.resizable(False, False) 
 # --- Widgets (the things that go inside the window) ---
 # Label: tells user what to do
 prompt = tk.Label(window, text="Type your message below:",
