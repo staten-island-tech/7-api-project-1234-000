@@ -14,7 +14,7 @@ def creature():
 
 def start_round():
     global current_name, current_types
-    current_name, current_types = fetch_creature()
+    current_name, current_types = creature()
     input_box.delete(0, tk.END)
     type_label.config(text="")
     feedback_label.config(text="Who's that Pokémon?")
