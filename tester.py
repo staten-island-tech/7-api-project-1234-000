@@ -1,5 +1,5 @@
 import requests
-
+import tkinter as tk
 
 
 def getFruit(fruit):
@@ -16,6 +16,14 @@ def getFruit(fruit):
     }
 
 
-teat = getFruit("Orange")
-print(teat["name"])
+window = tk.Tk()
+window.title("Diet For You")
+window.geometry("400x300")
+window.resizable(False,False)
 
+ask = tk.Label(window, text = "What Fruit Would You Like To Find About??", font = ("Arial", 14, "bold"))
+ask.pack()
+
+search = tk.Entry(window, font = ("Arial", 14))
+search.pack()
+window.mainloop()
