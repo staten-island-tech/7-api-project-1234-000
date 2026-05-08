@@ -6,15 +6,16 @@ def getFruit():
     text = entry.get()
     url = requests.get(f"https://fruityvice.com/api/fruit/{text}")
     if url.status_code != 200:
-        print("Error fetching data!")
+        error.config(text = "none try again")
         return None
     data  = url.json()
     name_label.config(text = f"Name: {data["name"]}")
     family_label.config(text = f"Family: {data["family"]}")
     genus_label.config(text = f"Genus: {data["genus"]}")
     nutrition_label.config(text =  f"Calories: {data["nutritions"]["calories"]}")
-    
-#cal, fat, protein, carbs
+    fat_label.config(text = f"Fat: {data["nutritions"]["fat"]}")
+    proteinlabel.config(text = f"Protein: {data["nutritions"]["protein"]}")
+    carbslabel.config(f"Carbs: {data["nutritions"]["carb"]}")
 
 window = tk.Tk()
 window.title("Diet For You")
@@ -33,9 +34,18 @@ genus_label.pack()
 nutrition_label = tk.Label(window, text = "", font = ("Arial", 14, "bold"))
 nutrition_label.pack()
 
+fat_label = tk.Label(window,text = "",font = ("Arial", 14, "bold"))
+fat_label.pack()
+proteinlabel = tk.Label(window, text = "", font = ("Arial", 14, "bold"))
+proteinlabel.pack()
+carbslabel = tk.Label(window, text = "", font = ("Arial", 14, "bold"))
+carbslabel.pack()
+
+error = tk.Label(window, text = "",font = ("Arial",50,"bold"))
+error.pack()
 entry = tk.Entry(window, font = ("Arial", 14, "bold"), fg= "yellow")
 entry.pack(pady=5)
 
-search_button = tk.Button(window, text = "Search", font = ("Arial", 14, "bold"), command=getFruit)
+search_button = tk.Button(window, text = "Search", font = ("Arial", 14, "bold"), command=getFruit, bg = "blue")
 search_button.pack()
 window.mainloop()
