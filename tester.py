@@ -3,17 +3,17 @@ import tkinter as tk
 
 
 def getFruit(fruit):
+    text = entry.get()
     url = requests.get(f"https://fruityvice.com/api/fruit/{fruit.lower()}")
     if url.status_code != 200:
         print("Error fetching data!")
         return None
     data  = url.json()
-    return {
-        "name": data["name"],
-        "family": data["family"],
-        "genus": data["genus"],
-        "nutritions": data["nutritions"]
-    }
+    name_label.config(text = data["name"])
+    '''"family": data["family"],
+    "genus": data["genus"],
+    "nutritions": data["nutritions"]'''
+    
 
 
 window = tk.Tk()
@@ -33,9 +33,9 @@ genus_label.pack()
 nutritions_label = tk.Label(window, text = "", font = ("Arial", 14, "bold"))
 nutritions_label.pack()
 
+entry = tk.Entry(window, font = ("Arial", 14, "bold"), fg= "yellow")
+entry.pack(pady=5)
+
 search_button = tk.Button(window, text = "Search", font = ("Arial", 14, "bold"))
 search_button.pack()
-
-search = tk.Entry(window, font = ("Arial", 14, "bold"), fg= "yellow")
-search.pack(pady=5)
 window.mainloop()
