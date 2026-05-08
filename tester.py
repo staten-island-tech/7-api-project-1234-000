@@ -2,9 +2,9 @@ import requests
 import tkinter as tk
 
 
-def getFruit(fruit):
+def getFruit():
     text = entry.get()
-    url = requests.get(f"https://fruityvice.com/api/fruit/{fruit.lower()}")
+    url = requests.get(f"https://fruityvice.com/api/fruit/{text}")
     if url.status_code != 200:
         print("Error fetching data!")
         return None
@@ -36,6 +36,6 @@ nutritions_label.pack()
 entry = tk.Entry(window, font = ("Arial", 14, "bold"), fg= "yellow")
 entry.pack(pady=5)
 
-search_button = tk.Button(window, text = "Search", font = ("Arial", 14, "bold"))
+search_button = tk.Button(window, text = "Search", font = ("Arial", 14, "bold"), command=getFruit)
 search_button.pack()
 window.mainloop()
