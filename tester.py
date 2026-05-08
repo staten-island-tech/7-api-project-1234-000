@@ -21,9 +21,19 @@ window.title("Diet For You")
 window.geometry("400x300")
 window.resizable(False,False)
 
-ask = tk.Label(window, text = "What Fruit Would You Like To Find About??", font = ("Arial", 14, "bold"))
+ask = tk.Label(window, text = "What Fruit Would You Like To Find About??", font = ("Arial", 14, "bold"), fg = "yellow")
 ask.pack()
 
-search = tk.Entry(window, font = ("Arial", 14))
+name_label = tk.Label(window, text = "", font = ("Arial", 14, "bold"))
+name_label.pack()
+family_label = tk.Label(window, text = "", font = ("Arial", 14, "bold"))
+family_label.pack()
+genus_label = tk.Label(window,text= "", font = ("Arial", 14, "bold"))
+genus_label.pack()
+nutritions_label = tk.Label(window, text = "", font = ("Arial", 14, "bold"))
+nutritions_label.pack()
+
+
+search = tk.Entry(window, font = ("Arial", 14, "bold"), fg= "yellow")
 search.pack()
 window.mainloop()
