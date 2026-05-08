@@ -9,15 +9,15 @@ def getFruit():
         print("Error fetching data!")
         return None
     data  = url.json()
-    name_label.config(text = data["name"])
-    family_label.config(text = data["family"])
-    genus_label.config(text = data["genus"])
-    nutritions_label.config(text = data["nutrition"])
+    name_label.config(text = f"Name: {data["name"]}")
+    family_label.config(text = f"Family: {data["family"]}")
+    genus_label.config(text = f"Genus: {data["genus"]}")
+    nutrition_label.config(text =  data["nutritions"]["calories"])
     
 
 window = tk.Tk()
 window.title("Diet For You")
-window.geometry("400x300")
+window.geometry("1200x800")
 window.resizable(False,False)
 
 ask = tk.Label(window, text = "What Fruit Would You Like To Find About??", font = ("Arial", 14, "bold"), fg = "yellow")
@@ -29,8 +29,8 @@ family_label = tk.Label(window, text = "", font = ("Arial", 14, "bold"))
 family_label.pack()
 genus_label = tk.Label(window,text= "", font = ("Arial", 14, "bold"))
 genus_label.pack()
-nutritions_label = tk.Label(window, text = "", font = ("Arial", 14, "bold"))
-nutritions_label.pack()
+nutrition_label = tk.Label(window, text = "", font = ("Arial", 14, "bold"))
+nutrition_label.pack()
 
 entry = tk.Entry(window, font = ("Arial", 14, "bold"), fg= "yellow")
 entry.pack(pady=5)
