@@ -23,7 +23,7 @@ window.title("Diet")
 window.geometry("1200x800")
 window.resizable(False,False)
 
-ask = tk.Label(window, text = "What Fruit Would You Like To Find About??", font = ("Arial", 50, "bold"), fg = "yellow")
+ask = tk.Label(window, text = "What Fruit Would You Like To Find More About??", font = ("Arial", 50, "bold"), fg = "yellow")
 ask.pack()
 
 name_label = tk.Label(window, text = "", font = ("Arial", 25, "bold"))
