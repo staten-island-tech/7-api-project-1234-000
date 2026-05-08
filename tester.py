@@ -10,11 +10,10 @@ def getFruit():
         return None
     data  = url.json()
     name_label.config(text = data["name"])
-    '''"family": data["family"],
-    "genus": data["genus"],
-    "nutritions": data["nutritions"]'''
+    family_label.config(text = data["family"])
+    genus_label.config(text = data["genus"])
+    nutritions_label.config(text = data["nutrition"])
     
-
 
 window = tk.Tk()
 window.title("Diet For You")
