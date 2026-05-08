@@ -33,7 +33,9 @@ genus_label.pack()
 nutritions_label = tk.Label(window, text = "", font = ("Arial", 14, "bold"))
 nutritions_label.pack()
 
+search_button = tk.Button(window, text = "Search", font = ("Arial", 14, "bold"))
+search_button.pack()
 
 search = tk.Entry(window, font = ("Arial", 14, "bold"), fg= "yellow")
-search.pack()
+search.pack(pady=5)
 window.mainloop()
