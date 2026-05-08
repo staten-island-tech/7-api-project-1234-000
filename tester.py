@@ -12,8 +12,9 @@ def getFruit():
     name_label.config(text = f"Name: {data["name"]}")
     family_label.config(text = f"Family: {data["family"]}")
     genus_label.config(text = f"Genus: {data["genus"]}")
-    nutrition_label.config(text =  data["nutritions"]["calories"])
+    nutrition_label.config(text =  f"Calories: {data["nutritions"]["calories"]}")
     
+#cal, fat, protein, carbs
 
 window = tk.Tk()
 window.title("Diet For You")
